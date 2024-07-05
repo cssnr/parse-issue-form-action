@@ -31087,15 +31087,21 @@ const github = __nccwpck_require__(5438)
 
         const body = core.getInput('body')
         console.log('body:', body)
+        if (!body) {
+            core.setFailed('No body to parse...')
+            return
+        }
 
         const parsed = parseData(body)
         console.log('parsed:', parsed)
 
+        const outputs = []
         for (let [key, value] of Object.entries(parsed)) {
             key = key.replace(' ', '_').toLowerCase()
-            console.log(`output: ${key}: ${value}`)
+            console.log(`set output: ${key}:`, JSON.stringify(value))
             core.setOutput(key, value)
         }
+        console.log('created outputs:', outputs)
     } catch (e) {
         core.debug(e)
         core.info(e.message)
