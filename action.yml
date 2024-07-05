@@ -1,0 +1,15 @@
+name: "Parse Issue Form Action"
+description: "Parse GitHub Issue Forms Action"
+author: "Shane"
+branding:
+  icon: "file-text"
+  color: "green"
+
+inputs:
+  body:
+    description: "Issue Body"
+    required: true
+
+runs:
+  using: "node20"
+  main: "dist/index.js"
