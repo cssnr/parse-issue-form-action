@@ -1,5 +1,5 @@
 name: "Parse Issue Form Action"
-description: "Parse GitHub Issue Forms Action"
+description: "Parse GitHub Issue Forms Action into Outputs"
 author: "Shane"
 branding:
   icon: "file-text"
