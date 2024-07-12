@@ -1,8 +1,18 @@
-[![Tags](https://github.com/cssnr/parse-issue-form-action/actions/workflows/tags.yaml/badge.svg)](https://github.com/cssnr/parse-issue-form-action/actions/workflows/tags.yaml)
-
+[![Tags](https://img.shields.io/github/actions/workflow/status/cssnr/parse-issue-form-action/tags.yaml?logo=github&logoColor=white&label=tags)](https://github.com/cssnr/parse-issue-form-action/actions/workflows/tags.yaml)
+[![CSSNR Website](https://img.shields.io/badge/pages-website-blue?logo=github&logoColor=white&color=blue)](https://cssnr.github.io/)
+[![Discord](https://img.shields.io/discord/899171661457293343?logo=discord&logoColor=white&label=discord&color=7289da)](https://discord.gg/wXy6m2X8wY)
 # Parse Issue Form Action
 
-Parse GitHub Issue Forms Action and Set as Outputs. This is currently a WIP but functional.
+Parse GitHub Issue Forms Action and Set as Outputs.
+This is a zero configuration way to get a form value as an Output.
+
+This is currently a WIP but functional.
+
+*   [Inputs](#Inputs)
+*   [Outputs](#Outputs)
+*   [Simple Example](#Simple-Example)
+*   [Known Issues](#Known-Issues)
+*   [Support](#Support)
 
 > [!NOTE]   
 > Please submit
@@ -55,7 +65,7 @@ body:
       description: Please describe the issue...
 ```
 
-This will generate these 2 outputs:
+Will generate these 2 outputs:
 - `${{ steps.issue.outputs.site_link }}`
 - `${{ steps.issue.outputs.details }}`
 
@@ -104,3 +114,16 @@ For a full example, see: https://github.com/cssnr/link-extractor/blob/master/.gi
 - If you use an IDE to validate actions, it will display the outputs as invalid since outputs are arbitrary based on input.
 
 This is a very simple action, for more details see: [src/index.js](src%2Findex.js)
+
+# Support
+
+For general help or to request a feature, see:
+
+- Q&A Discussion: https://github.com/cssnr/parse-issue-form-action/discussions/categories/q-a
+- Request a Feature: https://github.com/cssnr/parse-issue-form-action/discussions/categories/feature-requests
+
+If you are experiencing an issue/bug or getting unexpected results, you can:
+
+- Report an Issue: https://github.com/cssnr/parse-issue-form-action/issues
+- Chat with us on Discord: https://discord.gg/wXy6m2X8wY
+- Provide General Feedback: [https://cssnr.github.io/feedback/](https://cssnr.github.io/feedback/?app=Parse%20Issue%20Form)
