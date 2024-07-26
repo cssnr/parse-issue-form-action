@@ -31085,12 +31085,8 @@ const github = __nccwpck_require__(5438)
     try {
         console.log('github.context.issue:', github.context.issue)
 
-        const body = core.getInput('body')
+        const body = core.getInput('body', { required: true })
         console.log('body:', body)
-        if (!body) {
-            core.setFailed('No body to parse...')
-            return
-        }
 
         const parsed = parseData(body)
         console.log('parsed:', parsed)
@@ -31102,6 +31098,8 @@ const github = __nccwpck_require__(5438)
             core.setOutput(key, value)
         }
         console.log('created outputs:', outputs)
+
+        core.info(`\u001b[32;1mFinished Success`)
     } catch (e) {
         core.debug(e)
         core.info(e.message)
@@ -31112,8 +31110,8 @@ const github = __nccwpck_require__(5438)
 function parseData(input) {
     const lines = input.split('\n')
     const data = {}
-    let currentKey = null
 
+    let currentKey = null
     for (let line of lines) {
         line = line.trim()
         if (line.startsWith('### ')) {
@@ -31131,7 +31129,6 @@ function parseData(input) {
     for (let key in data) {
         data[key] = data[key].trim()
     }
-
     return data
 }
 
