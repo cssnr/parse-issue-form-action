@@ -1,6 +1,8 @@
 [![Tags](https://img.shields.io/github/actions/workflow/status/cssnr/parse-issue-form-action/tags.yaml?logo=github&logoColor=white&label=tags)](https://github.com/cssnr/parse-issue-form-action/actions/workflows/tags.yaml)
+[![Test](https://img.shields.io/github/actions/workflow/status/cssnr/parse-issue-form-action/test.yaml?logo=github&logoColor=white&label=test)](https://github.com/cssnr/parse-issue-form-action/actions/workflows/test.yaml)
 [![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=cssnr_parse-issue-form-action&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=cssnr_parse-issue-form-action)
 [![GitHub Release Version](https://img.shields.io/github/v/release/cssnr/parse-issue-form-action?logo=github)](https://github.com/cssnr/parse-issue-form-action/releases/latest)
+[![GitHub Last Commit](https://img.shields.io/github/last-commit/cssnr/parse-issue-form-action?logo=github&logoColor=white&label=updated)](https://github.com/cssnr/parse-issue-form-action/graphs/commit-activity)
 [![GitHub Top Language](https://img.shields.io/github/languages/top/cssnr/parse-issue-form-action?logo=htmx&logoColor=white)](https://github.com/cssnr/parse-issue-form-action)
 [![GitHub Org Stars](https://img.shields.io/github/stars/cssnr?style=flat&logo=github&logoColor=white)](https://cssnr.github.io/)
 [![Discord](https://img.shields.io/discord/899171661457293343?logo=discord&logoColor=white&label=discord&color=7289da)](https://discord.gg/wXy6m2X8wY)
@@ -38,7 +40,7 @@ This is currently a WIP but functional.
       body: ${{ github.event.issue.body }}
 ```
 
-### Outputs
+## Outputs
 
 Outputs are headings, to lower case, with spaces replaced with `_`'s.  
 A heading of `Site Link` will be an output with key `site_link`.  
