@@ -42,9 +42,8 @@ This is currently a WIP but functional.
 
 ## Outputs
 
-Outputs are headings, to lower case, with spaces replaced with `_`'s.  
-A heading of `Site Link` will be an output with key `site_link`.  
-The above example would provide this output: `${{ steps.issue.outputs.site_link }}`
+Outputs are headings/labels, to lower case, with spaces replaced with `_`'s.  
+A heading/label of `Site Link` will be an output with key `site_link`.  
 
 > [!WARNING]  
 > This only parses values as strings and will not parse check boxes or dropdowns correctly.  
@@ -74,7 +73,7 @@ body:
 
 Will generate these 2 outputs:
 
-- `${{ steps.issue.outputs.site_link }}`
+- `${{ steps.issue.outputs.site_url }}`
 - `${{ steps.issue.outputs.details }}`
 
 ```yaml

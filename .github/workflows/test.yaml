@@ -20,12 +20,12 @@ jobs:
         id: test
         uses: ./
         with:
-          body: "### test head\n\ntest value"
+          body: "### Test Head\n\nTest value."
 
       - name: "Echo Outputs"
         run: |
           echo '${{ steps.test.outputs.test_head }}'
-          if [ '${{ steps.test.outputs.test_head }}' != 'test value' ];then
+          if [ '${{ steps.test.outputs.test_head }}' != 'Test value.' ];then
             echo "Invalid Output"
             exit 1
           fi
