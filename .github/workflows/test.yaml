@@ -3,8 +3,6 @@ name: "Test"
 on:
   workflow_dispatch:
   push:
-    paths:
-      - "src/**"
 
 jobs:
   test:
@@ -22,7 +20,7 @@ jobs:
         with:
           body: "### Test Head\n\nTest value."
 
-      - name: "Echo Outputs"
+      - name: "Validate Outputs"
         run: |
           echo '${{ steps.test.outputs.test_head }}'
           if [ '${{ steps.test.outputs.test_head }}' != 'Test value.' ];then
