@@ -3,6 +3,7 @@
 [![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=cssnr_parse-issue-form-action&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=cssnr_parse-issue-form-action)
 [![GitHub Release Version](https://img.shields.io/github/v/release/cssnr/parse-issue-form-action?logo=github)](https://github.com/cssnr/parse-issue-form-action/releases/latest)
 [![GitHub Last Commit](https://img.shields.io/github/last-commit/cssnr/parse-issue-form-action?logo=github&logoColor=white&label=updated)](https://github.com/cssnr/parse-issue-form-action/graphs/commit-activity)
+[![Codeberg Last Commit](https://img.shields.io/gitea/last-commit/cssnr/parse-issue-form-action/master?gitea_url=https%3A%2F%2Fcodeberg.org%2F&logo=codeberg&logoColor=white&label=updated)](https://codeberg.org/cssnr/parse-issue-form-action)
 [![GitHub Top Language](https://img.shields.io/github/languages/top/cssnr/parse-issue-form-action?logo=htmx&logoColor=white)](https://github.com/cssnr/parse-issue-form-action)
 [![GitHub Org Stars](https://img.shields.io/github/stars/cssnr?style=flat&logo=github&logoColor=white)](https://cssnr.github.io/)
 [![Discord](https://img.shields.io/discord/899171661457293343?logo=discord&logoColor=white&label=discord&color=7289da)](https://discord.gg/wXy6m2X8wY)
@@ -14,14 +15,14 @@ This is a zero configuration way to get a form value as an Output.
 
 This is currently a WIP but functional.
 
-* [Inputs](#Inputs)
-* [Outputs](#Outputs)
-* [Examples](#Examples)
-* [Known Issues](#Known-Issues)
-* [Support](#Support)
-* [Contributing](#Contributing)
+- [Inputs](#Inputs)
+- [Outputs](#Outputs)
+- [Examples](#Examples)
+- [Known Issues](#Known-Issues)
+- [Support](#Support)
+- [Contributing](#Contributing)
 
-> [!NOTE]   
+> [!NOTE]  
 > Please submit
 > a [Feature Request](https://github.com/cssnr/parse-issue-form-action/discussions/categories/feature-requests)
 > for new features or [Open an Issue](https://github.com/cssnr/parse-issue-form-action/issues) if you find any bugs.
@@ -29,21 +30,21 @@ This is currently a WIP but functional.
 ## Inputs
 
 | input | required | default | description                                  |
-|-------|----------|---------|----------------------------------------------|
+| ----- | -------- | ------- | -------------------------------------------- |
 | body  | Yes      | -       | Set this to `${{ github.event.issue.body }}` |
 
 ```yaml
-  - name: "Parse Issue"
-    id: issue
-    uses: cssnr/parse-issue-form-action@v1
-    with:
-      body: ${{ github.event.issue.body }}
+- name: 'Parse Issue'
+  id: issue
+  uses: cssnr/parse-issue-form-action@v1
+  with:
+    body: ${{ github.event.issue.body }}
 ```
 
 ## Outputs
 
 Outputs are headings/labels, to lower case, with spaces replaced with `_`'s.  
-A heading/label of `Site Link` will be an output with key `site_link`.  
+A heading/label of `Site Link` will be an output with key `site_link`.
 
 > [!WARNING]  
 > This only parses values as strings and will not parse check boxes or dropdowns correctly.  
@@ -54,8 +55,8 @@ A heading/label of `Site Link` will be an output with key `site_link`.
 Using this issue form template:
 
 ```yaml
-name: "Issue"
-description: "Open an Issue"
+name: 'Issue'
+description: 'Open an Issue'
 
 body:
   - type: input
@@ -77,7 +78,7 @@ Will generate these 2 outputs:
 - `${{ steps.issue.outputs.details }}`
 
 ```yaml
-name: "Issue"
+name: 'Issue'
 
 on:
   issues:
@@ -86,27 +87,27 @@ on:
 
 jobs:
   issue:
-    name: "Issue"
+    name: 'Issue'
     runs-on: ubuntu-latest
     timeout-minutes: 5
 
     steps:
-      - name: "Checkout"
+      - name: 'Checkout'
         uses: actions/checkout@v4
 
-      - name: "Debug Issue"
+      - name: 'Debug Issue'
         run: |
           echo Issue number: '${{ github.event.issue.number }}'
           echo Issue title: '${{ github.event.issue.title }}'
           echo Issue body: '${{ github.event.issue.body }}'
 
-      - name: "Parse Issue"
+      - name: 'Parse Issue'
         id: issue
         uses: cssnr/parse-issue-form-action@v1
         with:
           body: ${{ github.event.issue.body }}
 
-      - name: "Debug Parsed Issue"
+      - name: 'Debug Parsed Issue'
         run: |
           echo Site Link: '${{ steps.issue.outputs.site_link }}'
           echo Details: '${{ steps.issue.outputs.details }}'
@@ -149,6 +150,7 @@ Additionally, you can support other GitHub Actions I have published:
 - [Update Version Tags Action](https://github.com/cssnr/update-version-tags-action)
 - [Update JSON Value Action](https://github.com/cssnr/update-json-value-action)
 - [Parse Issue Form Action](https://github.com/cssnr/parse-issue-form-action)
+- [Mirror Repository Action](https://github.com/cssnr/mirror-repository-action)
 - [Portainer Stack Deploy](https://github.com/cssnr/portainer-stack-deploy-action)
 - [Mozilla Addon Update Action](https://github.com/cssnr/mozilla-addon-update-action)
 
