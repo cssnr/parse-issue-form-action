@@ -24,7 +24,7 @@ jobs:
         with:
           body: "### Test Head\n\nTest value."
 
-      - name: "Validate Outputs"
+      - name: "Verify Outputs"
         run: |
           echo '${{ steps.test.outputs.test_head }}'
           if [ '${{ steps.test.outputs.test_head }}' != 'Test value.' ];then
