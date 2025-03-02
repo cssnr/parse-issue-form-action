@@ -31,8 +31,8 @@ This is currently a WIP but functional.
 ## Inputs
 
 | input | required | default | description                                  |
-| ----- | -------- | ------- | -------------------------------------------- |
-| body  | Yes      | -       | Set this to `${{ github.event.issue.body }}` |
+| ----- | :------: | ------- | -------------------------------------------- |
+| body  | **Yes**  | -       | Set this to `${{ github.event.issue.body }}` |
 
 ```yaml
 - name: 'Parse Issue'
