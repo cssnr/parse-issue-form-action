@@ -1,5 +1,6 @@
 [![Tags](https://img.shields.io/github/actions/workflow/status/cssnr/parse-issue-form-action/tags.yaml?logo=github&logoColor=white&label=tags)](https://github.com/cssnr/parse-issue-form-action/actions/workflows/tags.yaml)
 [![Test](https://img.shields.io/github/actions/workflow/status/cssnr/parse-issue-form-action/test.yaml?logo=github&logoColor=white&label=test)](https://github.com/cssnr/parse-issue-form-action/actions/workflows/test.yaml)
+[![Lint](https://img.shields.io/github/actions/workflow/status/cssnr/parse-issue-form-action/lint.yaml?logo=github&logoColor=white&label=lint)](https://github.com/cssnr/parse-issue-form-action/actions/workflows/lint.yaml)
 [![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=cssnr_parse-issue-form-action&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=cssnr_parse-issue-form-action)
 [![GitHub Release Version](https://img.shields.io/github/v/release/cssnr/parse-issue-form-action?logo=github)](https://github.com/cssnr/parse-issue-form-action/releases/latest)
 [![GitHub Last Commit](https://img.shields.io/github/last-commit/cssnr/parse-issue-form-action?logo=github&logoColor=white&label=updated)](https://github.com/cssnr/parse-issue-form-action/graphs/commit-activity)
@@ -10,11 +11,6 @@
 
 # Parse Issue Form Action
 
-Parse GitHub Issue Forms Action and Set as Outputs.
-This is a zero configuration way to get a form value as an Output.
-
-This is currently a WIP but functional.
-
 - [Inputs](#Inputs)
 - [Outputs](#Outputs)
 - [Examples](#Examples)
@@ -22,10 +18,15 @@ This is currently a WIP but functional.
 - [Support](#Support)
 - [Contributing](#Contributing)
 
+Parse GitHub Issue Forms Action and Set as Outputs.
+This is a zero configuration way to get a form value as an Output.
+
+This is currently a WIP but functional.
+
 > [!NOTE]  
-> Please submit
-> a [Feature Request](https://github.com/cssnr/parse-issue-form-action/discussions/categories/feature-requests)
-> for new features or [Open an Issue](https://github.com/cssnr/parse-issue-form-action/issues) if you find any bugs.
+> Please submit a [Feature Request](https://github.com/cssnr/parse-issue-form-action/discussions/categories/feature-requests)
+> for new features or [Open an Issue](https://github.com/cssnr/parse-issue-form-action/issues)
+> if you find any bugs.
 
 ## Inputs
 
@@ -116,12 +117,9 @@ For a full example, see: https://github.com/cssnr/link-extractor/blob/master/.gi
 
 ## Known Issues
 
-- As previously mentioned, this currently parses raw content, therefore, will not parse check box/dropdown values,
-  yet...
-- If a users uses `###` at the start of a line, it would be interpreted as an output. Will be fixed if an issue is
-  opened.
-- If you use an IDE to validate actions, it will display the outputs as invalid since outputs are arbitrary based on
-  input.
+- As previously mentioned, this currently parses raw content, therefore, will not parse check box/dropdown values, yet...
+- If a users uses `###` at the start of a line, it would be interpreted as an output. Will be fixed if an issue is opened.
+- If you use an IDE to validate actions, it will display the outputs as invalid since outputs are arbitrary based on input.
 
 This is a very simple action, for more details see: [src/index.js](src%2Findex.js)
 
@@ -136,8 +134,7 @@ If you are experiencing an issue/bug or getting unexpected results, you can:
 
 - Report an Issue: https://github.com/cssnr/parse-issue-form-action/issues
 - Chat with us on Discord: https://discord.gg/wXy6m2X8wY
-- Provide General
-  Feedback: [https://cssnr.github.io/feedback/](https://cssnr.github.io/feedback/?app=Parse%20Issue%20Form)
+- Provide General Feedback: [https://cssnr.github.io/feedback/](https://cssnr.github.io/feedback/?app=Parse%20Issue%20Form)
 
 # Contributing
 
@@ -145,13 +142,15 @@ Currently, the best way to contribute to this project is to star this project on
 
 Additionally, you can support other GitHub Actions I have published:
 
-- [VirusTotal Action](https://github.com/cssnr/virustotal-action)
-- [Update Version Tags Action](https://github.com/cssnr/update-version-tags-action)
-- [Update JSON Value Action](https://github.com/cssnr/update-json-value-action)
-- [Parse Issue Form Action](https://github.com/cssnr/parse-issue-form-action)
-- [Mirror Repository Action](https://github.com/cssnr/mirror-repository-action)
-- [Stack Deploy Action](https://github.com/cssnr/stack-deploy-action)
-- [Portainer Stack Deploy](https://github.com/cssnr/portainer-stack-deploy-action)
-- [Mozilla Addon Update Action](https://github.com/cssnr/mozilla-addon-update-action)
+- [Stack Deploy Action](https://github.com/cssnr/stack-deploy-action?tab=readme-ov-file#readme)
+- [Portainer Stack Deploy](https://github.com/cssnr/portainer-stack-deploy-action?tab=readme-ov-file#readme)
+- [VirusTotal Action](https://github.com/cssnr/virustotal-action?tab=readme-ov-file#readme)
+- [Mirror Repository Action](https://github.com/cssnr/mirror-repository-action?tab=readme-ov-file#readme)
+- [Update Version Tags Action](https://github.com/cssnr/update-version-tags-action?tab=readme-ov-file#readme)
+- [Update JSON Value Action](https://github.com/cssnr/update-json-value-action?tab=readme-ov-file#readme)
+- [Parse Issue Form Action](https://github.com/cssnr/parse-issue-form-action?tab=readme-ov-file#readme)
+- [Cloudflare Purge Cache Action](https://github.com/cssnr/cloudflare-purge-cache-action?tab=readme-ov-file#readme)
+- [Mozilla Addon Update Action](https://github.com/cssnr/mozilla-addon-update-action?tab=readme-ov-file#readme)
+- [Docker Tags Action](https://github.com/cssnr/docker-tags-action?tab=readme-ov-file#readme)
 
 For a full list of current projects to support visit: [https://cssnr.github.io/](https://cssnr.github.io/)
