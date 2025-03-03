@@ -25,8 +25,7 @@ This is currently a WIP but functional.
 
 > [!NOTE]  
 > Please submit a [Feature Request](https://github.com/cssnr/parse-issue-form-action/discussions/categories/feature-requests)
-> for new features or [Open an Issue](https://github.com/cssnr/parse-issue-form-action/issues)
-> if you find any bugs.
+> for new features or [Open an Issue](https://github.com/cssnr/parse-issue-form-action/issues) if you find any bugs.
 
 ## Inputs
 
