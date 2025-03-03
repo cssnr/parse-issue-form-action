@@ -120,7 +120,7 @@ For a full example, see: https://github.com/cssnr/link-extractor/blob/master/.gi
 - If a users uses `###` at the start of a line, it would be interpreted as an output. Will be fixed if an issue is opened.
 - If you use an IDE to validate actions, it will display the outputs as invalid since outputs are arbitrary based on input.
 
-This is a very simple action, for more details see: [src/index.js](src%2Findex.js)
+This is a very simple action, for more details see: [src/index.js](src/index.js)
 
 # Support
 
