@@ -1,12 +1,13 @@
-[![Release](https://img.shields.io/github/actions/workflow/status/cssnr/parse-issue-form-action/release.yaml?logo=github&logoColor=white&label=release)](https://github.com/cssnr/parse-issue-form-action/actions/workflows/release.yaml)
-[![Test](https://img.shields.io/github/actions/workflow/status/cssnr/parse-issue-form-action/test.yaml?logo=github&logoColor=white&label=test)](https://github.com/cssnr/parse-issue-form-action/actions/workflows/test.yaml)
-[![Lint](https://img.shields.io/github/actions/workflow/status/cssnr/parse-issue-form-action/lint.yaml?logo=github&logoColor=white&label=lint)](https://github.com/cssnr/parse-issue-form-action/actions/workflows/lint.yaml)
+[![Tags](https://img.shields.io/badge/tags-v1_%7C_v1.0-blue?logo=git&logoColor=white)](https://github.com/cssnr/parse-issue-form-action/tags)
+[![GitHub Release Version](https://img.shields.io/github/v/release/cssnr/parse-issue-form-action?logo=git&logoColor=white&label=latest)](https://github.com/cssnr/parse-issue-form-action/releases/latest)
+[![Release](https://img.shields.io/github/actions/workflow/status/cssnr/parse-issue-form-action/release.yaml?logo=github&label=release)](https://github.com/cssnr/parse-issue-form-action/actions/workflows/release.yaml)
+[![Test](https://img.shields.io/github/actions/workflow/status/cssnr/parse-issue-form-action/test.yaml?logo=github&label=test)](https://github.com/cssnr/parse-issue-form-action/actions/workflows/test.yaml)
+[![Lint](https://img.shields.io/github/actions/workflow/status/cssnr/parse-issue-form-action/lint.yaml?logo=github&label=lint)](https://github.com/cssnr/parse-issue-form-action/actions/workflows/lint.yaml)
 [![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=cssnr_parse-issue-form-action&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=cssnr_parse-issue-form-action)
-[![GitHub Release Version](https://img.shields.io/github/v/release/cssnr/parse-issue-form-action?logo=github)](https://github.com/cssnr/parse-issue-form-action/releases/latest)
-[![GitHub Last Commit](https://img.shields.io/github/last-commit/cssnr/parse-issue-form-action?logo=github&logoColor=white&label=updated)](https://github.com/cssnr/parse-issue-form-action/graphs/commit-activity)
+[![GitHub Last Commit](https://img.shields.io/github/last-commit/cssnr/parse-issue-form-action?logo=github&label=updated)](https://github.com/cssnr/parse-issue-form-action/graphs/commit-activity)
 [![Codeberg Last Commit](https://img.shields.io/gitea/last-commit/cssnr/parse-issue-form-action/master?gitea_url=https%3A%2F%2Fcodeberg.org%2F&logo=codeberg&logoColor=white&label=updated)](https://codeberg.org/cssnr/parse-issue-form-action)
-[![GitHub Top Language](https://img.shields.io/github/languages/top/cssnr/parse-issue-form-action?logo=htmx&logoColor=white)](https://github.com/cssnr/parse-issue-form-action)
-[![GitHub Org Stars](https://img.shields.io/github/stars/cssnr?style=flat&logo=github&logoColor=white)](https://cssnr.github.io/)
+[![GitHub Top Language](https://img.shields.io/github/languages/top/cssnr/parse-issue-form-action?logo=htmx)](https://github.com/cssnr/parse-issue-form-action)
+[![GitHub Org Stars](https://img.shields.io/github/stars/cssnr?style=flat&logo=github)](https://cssnr.github.io/)
 [![Discord](https://img.shields.io/discord/899171661457293343?logo=discord&logoColor=white&label=discord&color=7289da)](https://discord.gg/wXy6m2X8wY)
 
 # Parse Issue Form Action
@@ -14,6 +15,7 @@
 - [Inputs](#Inputs)
 - [Outputs](#Outputs)
 - [Examples](#Examples)
+- [Tags](#Tags)
 - [Known Issues](#Known-Issues)
 - [Support](#Support)
 - [Contributing](#Contributing)
@@ -21,11 +23,11 @@
 Parse GitHub Issue Forms Action and Set as Outputs.
 This is a zero configuration way to get a form value as an Output.
 
-This is currently a WIP but functional.
-
 > [!NOTE]  
 > Please submit a [Feature Request](https://github.com/cssnr/parse-issue-form-action/discussions/categories/feature-requests)
 > for new features or [Open an Issue](https://github.com/cssnr/parse-issue-form-action/issues) if you find any bugs.
+
+This is a **very** simple action, for more details see: [src/index.js](src/index.js)
 
 ## Inputs
 
@@ -114,13 +116,25 @@ jobs:
 
 For a full example, see: https://github.com/cssnr/link-extractor/blob/master/.github/workflows/issue.yaml
 
+## Tags
+
+The following [rolling tags](https://github.com/cssnr/parse-issue-form-action/tags) are maintained.
+
+| Tag      | Example  | Bugs | Feat. | Description                            |
+| -------- | -------- | :--: | :---: | -------------------------------------- |
+| `vN`     | `v1`     |  ✅  |  ✅   | Points to latest `vN.x.x` release.     |
+| `vN.N`   | `v1.0`   |  ✅  |  ❌   | Points to latest `vN.N.x` release.     |
+| `vN.N.N` | `v1.0.0` |  ❌  |  ❌   | Points directly to a specific release. |
+
+**Important:** Make sure to use one of the [latest tags](https://github.com/cssnr/parse-issue-form-action/tags).
+
+You can view the release notes for each version on the [releases page](https://github.com/cssnr/parse-issue-form-action/releases).
+
 ## Known Issues
 
-- As previously mentioned, this currently parses raw content, therefore, will not parse check box/dropdown values, yet...
-- If a users uses `###` at the start of a line, it would be interpreted as an output. Will be fixed if an issue is opened.
-- If you use an IDE to validate actions, it will display the outputs as invalid since outputs are arbitrary based on input.
-
-This is a very simple action, for more details see: [src/index.js](src/index.js)
+- As mentioned, this currently parses raw content, therefore, will not parse check box/dropdown values, yet.
+- If a users uses `###` at the start of a line, it would be interpreted as an output. Let us know if this is an issue.
+- If you use an actions validator, it will display the outputs as invalid since outputs are arbitrary based on input.
 
 # Support
 
@@ -135,9 +149,13 @@ If you are experiencing an issue/bug or getting unexpected results, you can:
 - Chat with us on Discord: https://discord.gg/wXy6m2X8wY
 - Provide General Feedback: [https://cssnr.github.io/feedback/](https://cssnr.github.io/feedback/?app=Parse%20Issue%20Form)
 
+For more information, see the CSSNR [SUPPORT.md](https://github.com/cssnr/.github/blob/master/.github/SUPPORT.md#support).
+
 # Contributing
 
 Currently, the best way to contribute to this project is to star this project on GitHub.
+
+For more information, see the CSSNR [CONTRIBUTING.md](https://github.com/cssnr/.github/blob/master/.github/CONTRIBUTING.md#contributing).
 
 Additionally, you can support other GitHub Actions I have published:
 
