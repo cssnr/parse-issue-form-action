@@ -27,6 +27,8 @@ This is a zero configuration way to get a form value as an Output.
 > Please submit a [Feature Request](https://github.com/cssnr/parse-issue-form-action/discussions/categories/feature-requests)
 > for new features or [Open an Issue](https://github.com/cssnr/parse-issue-form-action/issues) if you find any bugs.
 
+This is a **very** simple action, for more details see: [src/index.js](src/index.js)
+
 ## Inputs
 
 | input | required | default | description                                  |
@@ -130,11 +132,9 @@ You can view the release notes for each version on the [releases page](https://g
 
 ## Known Issues
 
-- As previously mentioned, this currently parses raw content, therefore, will not parse check box/dropdown values, yet...
+- As previously mentioned, this currently parses raw content, therefore, will not parse check box/dropdown values, yet.
 - If a users uses `###` at the start of a line, it would be interpreted as an output. Will be fixed if an issue is opened.
-- If you use an IDE to validate actions, it will display the outputs as invalid since outputs are arbitrary based on input.
-
-This is a **very** simple action, for more details see: [src/index.js](src/index.js)
+- If you use an actions validator, it will display the outputs as invalid since outputs are arbitrary based on input.
 
 # Support
 

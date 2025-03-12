@@ -65,7 +65,8 @@ jobs:
           file "${RUNNER_TEMP}/actionlint"
           "${RUNNER_TEMP}/actionlint" --version
           echo "::endgroup::"
-          "${RUNNER_TEMP}/actionlint" -color -verbose -shellcheck= -pyflakes=
+          "${RUNNER_TEMP}/actionlint" -color -verbose -shellcheck= -pyflakes= \
+            -ignore 'property ".+" is not defined in object type {}'
 
   build:
     name: "Build"
