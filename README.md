@@ -1,5 +1,6 @@
-[![Tags](https://img.shields.io/badge/tags-v1_%7C_v1.0-blue?logo=git&logoColor=white)](https://github.com/cssnr/parse-issue-form-action/tags)
-[![GitHub Release Version](https://img.shields.io/github/v/release/cssnr/parse-issue-form-action?logo=git&logoColor=white&label=latest)](https://github.com/cssnr/parse-issue-form-action/releases/latest)
+[![GitHub Tag Major](https://img.shields.io/github/v/tag/cssnr/parse-issue-form-action?filter=!v*.*&logo=git&logoColor=white&labelColor=585858&label=%20)](https://github.com/cssnr/parse-issue-form-action/tags)
+[![GitHub Tag Minor](https://img.shields.io/github/v/tag/cssnr/parse-issue-form-action?filter=!v*.*.*&logo=git&logoColor=white&labelColor=585858&label=%20)](https://github.com/cssnr/parse-issue-form-action/tags)
+[![GitHub Release Version](https://img.shields.io/github/v/release/cssnr/parse-issue-form-action?logo=git&logoColor=white&labelColor=585858&label=%20)](https://github.com/cssnr/parse-issue-form-action/releases/latest)
 [![Release](https://img.shields.io/github/actions/workflow/status/cssnr/parse-issue-form-action/release.yaml?logo=github&label=release)](https://github.com/cssnr/parse-issue-form-action/actions/workflows/release.yaml)
 [![Test](https://img.shields.io/github/actions/workflow/status/cssnr/parse-issue-form-action/test.yaml?logo=github&label=test)](https://github.com/cssnr/parse-issue-form-action/actions/workflows/test.yaml)
 [![Lint](https://img.shields.io/github/actions/workflow/status/cssnr/parse-issue-form-action/lint.yaml?logo=github&label=lint)](https://github.com/cssnr/parse-issue-form-action/actions/workflows/lint.yaml)
@@ -20,8 +21,8 @@
 - [Support](#Support)
 - [Contributing](#Contributing)
 
-Parse GitHub Issue Forms Action and Set as Outputs.
-This is a zero configuration way to get a form value as an Output.
+Parse GitHub issue forms into outputs.  
+This turns all issue form inputs into action outputs with zero configuration.
 
 > [!NOTE]  
 > Please submit a [Feature Request](https://github.com/cssnr/parse-issue-form-action/discussions/categories/feature-requests)
@@ -51,6 +52,19 @@ A heading/label of `Site Link` will be an output with key `site_link`.
 > [!WARNING]  
 > This only parses values as strings and will not parse check boxes or dropdowns correctly.  
 > Once I have a use or request for this feature, the functionality will be added...
+
+```yaml
+- name: 'Parse Issue'
+  id: issue
+  uses: cssnr/parse-issue-form-action@v1
+  with:
+    body: ${{ github.event.issue.body }}
+
+- name: 'Echo Outputs'
+  run: |
+    echo URL: '${{ steps.issue.outputs.url }}'
+    echo Details: '${{ steps.issue.outputs.details }}'
+```
 
 ## Examples
 
@@ -118,17 +132,15 @@ For a full example, see: https://github.com/cssnr/link-extractor/blob/master/.gi
 
 ## Tags
 
-The following [rolling tags](https://github.com/cssnr/parse-issue-form-action/tags) are maintained.
+The following rolling [tags](https://github.com/cssnr/parse-issue-form-action/tags) are maintained.
 
-| Tag      | Example  | Bugs | Feat. | Description                            |
-| -------- | -------- | :--: | :---: | -------------------------------------- |
-| `vN`     | `v1`     |  ✅  |  ✅   | Points to latest `vN.x.x` release.     |
-| `vN.N`   | `v1.0`   |  ✅  |  ❌   | Points to latest `vN.N.x` release.     |
-| `vN.N.N` | `v1.0.0` |  ❌  |  ❌   | Points directly to a specific release. |
+| Tag                                                                                                                                                                                                                 | Example  | Target   | Bugs | Feat. | Description                                               |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------- | -------- | :--: | :---: | --------------------------------------------------------- |
+| [![GitHub Tag](https://img.shields.io/github/v/tag/cssnr/parse-issue-form-action?filter=!v*.*&style=for-the-badge&label=%20&color=limegreen)](https://github.com/cssnr/parse-issue-form-action/releases/latest)     | `vN`     | `vN.x.x` |  ✅  |  ✅   | Includes new features but is always backwards compatible. |
+| [![GitHub Tag](https://img.shields.io/github/v/tag/cssnr/parse-issue-form-action?filter=!v*.*.*&style=for-the-badge&label=%20&color=yellowgreen)](https://github.com/cssnr/parse-issue-form-action/releases/latest) | `vN.N`   | `vN.N.x` |  ✅  |  ❌   | Only receives bug fixes. This is the most stable tag.     |
+| [![GitHub Release](https://img.shields.io/github/v/release/cssnr/parse-issue-form-action?style=for-the-badge&label=%20&color=orange)](https://github.com/cssnr/parse-issue-form-action/releases/latest)             | `vN.N.N` | `vN.N.N` |  ❌  |  ❌   | Not a rolling tag. **Not** recommended.                   |
 
-**Important:** Make sure to use one of the [latest tags](https://github.com/cssnr/parse-issue-form-action/tags).
-
-You can view the release notes for each version on the [releases page](https://github.com/cssnr/parse-issue-form-action/releases).
+You can view the release notes for each version on the [releases](https://github.com/cssnr/parse-issue-form-action/releases) page.
 
 ## Known Issues
 
