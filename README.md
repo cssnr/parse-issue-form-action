@@ -132,8 +132,8 @@ You can view the release notes for each version on the [releases page](https://g
 
 ## Known Issues
 
-- As previously mentioned, this currently parses raw content, therefore, will not parse check box/dropdown values, yet.
-- If a users uses `###` at the start of a line, it would be interpreted as an output. Will be fixed if an issue is opened.
+- As mentioned, this currently parses raw content, therefore, will not parse check box/dropdown values, yet.
+- If a users uses `###` at the start of a line, it would be interpreted as an output. Let us know if this is an issue.
 - If you use an actions validator, it will display the outputs as invalid since outputs are arbitrary based on input.
 
 # Support
@@ -155,6 +155,8 @@ For more information, see the CSSNR [SUPPORT.md](https://github.com/cssnr/.githu
 
 Currently, the best way to contribute to this project is to star this project on GitHub.
 
+For more information, see the CSSNR [CONTRIBUTING.md](https://github.com/cssnr/.github/blob/master/.github/CONTRIBUTING.md#contributing).
+
 Additionally, you can support other GitHub Actions I have published:
 
 - [Stack Deploy Action](https://github.com/cssnr/stack-deploy-action?tab=readme-ov-file#readme)
@@ -169,5 +171,3 @@ Additionally, you can support other GitHub Actions I have published:
 - [Docker Tags Action](https://github.com/cssnr/docker-tags-action?tab=readme-ov-file#readme)
 
 For a full list of current projects to support visit: [https://cssnr.github.io/](https://cssnr.github.io/)
-
-For more information, see the CSSNR [CONTRIBUTING.md](https://github.com/cssnr/.github/blob/master/.github/CONTRIBUTING.md#contributing).
