@@ -1,6 +1,7 @@
 [![GitHub Tag Major](https://img.shields.io/github/v/tag/cssnr/parse-issue-form-action?sort=semver&filter=!v*.*&logo=git&logoColor=white&labelColor=585858&label=%20)](https://github.com/cssnr/parse-issue-form-action/tags)
 [![GitHub Tag Minor](https://img.shields.io/github/v/tag/cssnr/parse-issue-form-action?sort=semver&filter=!v*.*.*&logo=git&logoColor=white&labelColor=585858&label=%20)](https://github.com/cssnr/parse-issue-form-action/tags)
 [![GitHub Release Version](https://img.shields.io/github/v/release/cssnr/parse-issue-form-action?logo=git&logoColor=white&labelColor=585858&label=%20)](https://github.com/cssnr/parse-issue-form-action/releases/latest)
+[![GitHub Dist Size](https://img.shields.io/github/size/cssnr/parse-issue-form-action/dist%2Findex.js?label=dist%20size)](https://github.com/cssnr/parse-issue-form-action/blob/master/src/index.js)
 [![Release](https://img.shields.io/github/actions/workflow/status/cssnr/parse-issue-form-action/release.yaml?logo=github&label=release)](https://github.com/cssnr/parse-issue-form-action/actions/workflows/release.yaml)
 [![Test](https://img.shields.io/github/actions/workflow/status/cssnr/parse-issue-form-action/test.yaml?logo=github&label=test)](https://github.com/cssnr/parse-issue-form-action/actions/workflows/test.yaml)
 [![Lint](https://img.shields.io/github/actions/workflow/status/cssnr/parse-issue-form-action/lint.yaml?logo=github&label=lint)](https://github.com/cssnr/parse-issue-form-action/actions/workflows/lint.yaml)
