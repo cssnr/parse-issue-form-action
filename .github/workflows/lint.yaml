@@ -69,8 +69,8 @@ jobs:
           "${RUNNER_TEMP}/actionlint" -color -verbose -shellcheck= -pyflakes= \
             -ignore 'property ".+" is not defined in object type {}'
 
-      #- name: "Check Build Action"
-      #  uses: cssnr/check-build-action@master
+      - name: "Check Build Action"
+        uses: cssnr/check-build-action@master
 
       - name: "ESLint Annotate"
         if: ${{ failure() && steps.eslint.outcome != 'success' }}
