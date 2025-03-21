@@ -1,6 +1,7 @@
-[![GitHub Tag Major](https://img.shields.io/github/v/tag/cssnr/parse-issue-form-action?filter=!v*.*&logo=git&logoColor=white&labelColor=585858&label=%20)](https://github.com/cssnr/parse-issue-form-action/tags)
-[![GitHub Tag Minor](https://img.shields.io/github/v/tag/cssnr/parse-issue-form-action?filter=!v*.*.*&logo=git&logoColor=white&labelColor=585858&label=%20)](https://github.com/cssnr/parse-issue-form-action/tags)
+[![GitHub Tag Major](https://img.shields.io/github/v/tag/cssnr/parse-issue-form-action?sort=semver&filter=!v*.*&logo=git&logoColor=white&labelColor=585858&label=%20)](https://github.com/cssnr/parse-issue-form-action/tags)
+[![GitHub Tag Minor](https://img.shields.io/github/v/tag/cssnr/parse-issue-form-action?sort=semver&filter=!v*.*.*&logo=git&logoColor=white&labelColor=585858&label=%20)](https://github.com/cssnr/parse-issue-form-action/tags)
 [![GitHub Release Version](https://img.shields.io/github/v/release/cssnr/parse-issue-form-action?logo=git&logoColor=white&labelColor=585858&label=%20)](https://github.com/cssnr/parse-issue-form-action/releases/latest)
+[![GitHub Dist Size](https://img.shields.io/github/size/cssnr/parse-issue-form-action/dist%2Findex.js?label=dist%20size)](https://github.com/cssnr/parse-issue-form-action/blob/master/src/index.js)
 [![Release](https://img.shields.io/github/actions/workflow/status/cssnr/parse-issue-form-action/release.yaml?logo=github&label=release)](https://github.com/cssnr/parse-issue-form-action/actions/workflows/release.yaml)
 [![Test](https://img.shields.io/github/actions/workflow/status/cssnr/parse-issue-form-action/test.yaml?logo=github&label=test)](https://github.com/cssnr/parse-issue-form-action/actions/workflows/test.yaml)
 [![Lint](https://img.shields.io/github/actions/workflow/status/cssnr/parse-issue-form-action/lint.yaml?logo=github&label=lint)](https://github.com/cssnr/parse-issue-form-action/actions/workflows/lint.yaml)
@@ -32,9 +33,9 @@ This is a **very** simple action, for more details see: [src/index.js](src/index
 
 ## Inputs
 
-| input | required | default | description                                  |
-| ----- | :------: | ------- | -------------------------------------------- |
-| body  | **Yes**  | -       | Set this to `${{ github.event.issue.body }}` |
+| Input |  Req.   | Default | Input&nbsp;Description                  |
+| :---- | :-----: | :------ | :-------------------------------------- |
+| body  | **Yes** | -       | Set to `${{ github.event.issue.body }}` |
 
 ```yaml
 - name: 'Parse Issue'
@@ -62,8 +63,8 @@ A heading/label of `Site Link` will be an output with key `site_link`.
 
 - name: 'Echo Outputs'
   run: |
-    echo URL: '${{ steps.issue.outputs.url }}'
-    echo Details: '${{ steps.issue.outputs.details }}'
+    echo "URL: ${{ steps.issue.outputs.url }}"
+    echo "Details: ${{ steps.issue.outputs.details }}"
 ```
 
 ## Examples
@@ -112,9 +113,9 @@ jobs:
 
       - name: 'Debug Issue'
         run: |
-          echo Issue number: '${{ github.event.issue.number }}'
-          echo Issue title: '${{ github.event.issue.title }}'
-          echo Issue body: '${{ github.event.issue.body }}'
+          echo "Issue number: ${{ github.event.issue.number }}"
+          echo "Issue title: ${{ github.event.issue.title }}"
+          echo "Issue body: ${{ github.event.issue.body }}"
 
       - name: 'Parse Issue'
         id: issue
@@ -124,8 +125,8 @@ jobs:
 
       - name: 'Debug Parsed Issue'
         run: |
-          echo Site Link: '${{ steps.issue.outputs.site_link }}'
-          echo Details: '${{ steps.issue.outputs.details }}'
+          echo "Site Link: ${{ steps.issue.outputs.site_link }}"
+          echo "Details: ${{ steps.issue.outputs.details }}"
 ```
 
 For a full example, see: https://github.com/cssnr/link-extractor/blob/master/.github/workflows/issue.yaml
@@ -134,13 +135,16 @@ For a full example, see: https://github.com/cssnr/link-extractor/blob/master/.gi
 
 The following rolling [tags](https://github.com/cssnr/parse-issue-form-action/tags) are maintained.
 
-| Tag                                                                                                                                                                                                                 | Example  | Target   | Bugs | Feat. | Description                                               |
-| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------- | -------- | :--: | :---: | --------------------------------------------------------- |
-| [![GitHub Tag](https://img.shields.io/github/v/tag/cssnr/parse-issue-form-action?filter=!v*.*&style=for-the-badge&label=%20&color=limegreen)](https://github.com/cssnr/parse-issue-form-action/releases/latest)     | `vN`     | `vN.x.x` |  ✅  |  ✅   | Includes new features but is always backwards compatible. |
-| [![GitHub Tag](https://img.shields.io/github/v/tag/cssnr/parse-issue-form-action?filter=!v*.*.*&style=for-the-badge&label=%20&color=yellowgreen)](https://github.com/cssnr/parse-issue-form-action/releases/latest) | `vN.N`   | `vN.N.x` |  ✅  |  ❌   | Only receives bug fixes. This is the most stable tag.     |
-| [![GitHub Release](https://img.shields.io/github/v/release/cssnr/parse-issue-form-action?style=for-the-badge&label=%20&color=orange)](https://github.com/cssnr/parse-issue-form-action/releases/latest)             | `vN.N.N` | `vN.N.N` |  ❌  |  ❌   | Not a rolling tag. **Not** recommended.                   |
+| Version&nbsp;Tag                                                                                                                                                                                                               | Rolling | Bugs | Feat. |   Name    |  Target  | Example  |
+| :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | :-----: | :--: | :---: | :-------: | :------: | :------- |
+| [![GitHub Tag Major](https://img.shields.io/github/v/tag/cssnr/parse-issue-form-action?sort=semver&filter=!v*.*&style=for-the-badge&label=%20&color=44cc10)](https://github.com/cssnr/parse-issue-form-action/releases/latest) |   ✅    |  ✅  |  ✅   | **Major** | `vN.x.x` | `vN`     |
+| [![GitHub Tag Minor](https://img.shields.io/github/v/tag/cssnr/parse-issue-form-action?sort=semver&filter=!v*.*.*&style=for-the-badge&label=%20&color=blue)](https://github.com/cssnr/parse-issue-form-action/releases/latest) |   ✅    |  ✅  |  ❌   | **Minor** | `vN.N.x` | `vN.N`   |
+| [![GitHub Release](https://img.shields.io/github/v/release/cssnr/parse-issue-form-action?style=for-the-badge&label=%20&color=red)](https://github.com/cssnr/parse-issue-form-action/releases/latest)                           |   ❌    |  ❌  |  ❌   | **Micro** | `vN.N.N` | `vN.N.N` |
 
 You can view the release notes for each version on the [releases](https://github.com/cssnr/parse-issue-form-action/releases) page.
+
+The **Major** tag is recommended. It is the most up-to-date and always backwards compatible.
+Breaking changes would result in a **Major** version bump. At a minimum you should use a **Minor** tag.
 
 ## Known Issues
 
@@ -181,5 +185,7 @@ Additionally, you can support other GitHub Actions I have published:
 - [Cloudflare Purge Cache Action](https://github.com/cssnr/cloudflare-purge-cache-action?tab=readme-ov-file#readme)
 - [Mozilla Addon Update Action](https://github.com/cssnr/mozilla-addon-update-action?tab=readme-ov-file#readme)
 - [Docker Tags Action](https://github.com/cssnr/docker-tags-action?tab=readme-ov-file#readme)
+- [Package Changelog Action](https://github.com/cssnr/package-changelog-action?tab=readme-ov-file#readme)
+- [NPM Outdated Check Action](https://github.com/cssnr/npm-outdated-action?tab=readme-ov-file#readme)
 
 For a full list of current projects to support visit: [https://cssnr.github.io/](https://cssnr.github.io/)
