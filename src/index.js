@@ -32,6 +32,7 @@ function parseData(input) {
     const data = {}
 
     let currentKey = null
+
     for (let line of lines) {
         line = line.trim()
         if (line.startsWith('### ')) {
