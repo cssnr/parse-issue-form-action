@@ -29,7 +29,7 @@ jobs:
           semver: patch
           prerelease: false
           prefix: v
-          #target_commitish: release
+          target_commitish: release
 
       - name: "Process Release Draft URL"
         run: |
