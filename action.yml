@@ -1,6 +1,7 @@
 name: "Parse Issue Form"
 description: "Parse GitHub issue forms headings/sections into outputs automatically"
 author: "Shane"
+
 branding:
   icon: "file-text"
   color: "green"
