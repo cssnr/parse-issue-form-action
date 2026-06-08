@@ -26,6 +26,8 @@ jobs:
 
       - name: "Get Previous Tag"
         id: prev-tag
+        env:
+          GH_TOKEN: ${{ github.token }}
         run: |
           LATEST_TAG=$(gh release view --json tagName --jq .tagName)
           echo "LATEST_TAG: ${LATEST_TAG}"
