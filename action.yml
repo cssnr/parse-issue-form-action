@@ -1,0 +1,16 @@
+name: "Parse Issue Form"
+description: "Parse GitHub issue forms headings/sections into outputs automatically"
+author: "Shane"
+
+branding:
+  icon: "file-text"
+  color: "green"
+
+inputs:
+  body:
+    description: "Issue Body"
+    required: true
+
+runs:
+  using: "node24"
+  main: "dist/index.js"
