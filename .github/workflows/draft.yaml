@@ -21,6 +21,19 @@ jobs:
     steps:
       - name: "Checkout"
         uses: actions/checkout@v6
+        with:
+          fetch-depth: 0
+
+      - name: "Get Previous Tag"
+        id: prev-tag
+        run: |
+          LATEST_TAG=$(gh release view --json tagName --jq .tagName)
+          echo "LATEST_TAG: ${LATEST_TAG}"
+          TAG_TIME=$(git log -1 --format=%ct "${LATEST_TAG}")
+          echo "TAG_TIME: ${TAG_TIME}"
+          PREV_SHA=$(git rev-list -1 --before="${TAG_TIME}" --first-parent origin/master)
+          echo "PREV_SHA: ${PREV_SHA}"
+          echo "sha=${PREV_SHA}" >> "${GITHUB_OUTPUT}"
 
       - name: "Draft Release Action"
         id: draft
@@ -29,7 +42,7 @@ jobs:
           semver: patch
           prerelease: false
           prefix: v
-          target_commitish: release
+          previous_tag_name: ${{ steps.prev-tag.outputs.sha }}
 
       - name: "Process Release Draft URL"
         run: |
