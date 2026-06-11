@@ -24,27 +24,35 @@ jobs:
         with:
           fetch-depth: 0
 
+      #- name: "Get Previous Tag"
+      #  id: prev-tag
+      #  env:
+      #    GH_TOKEN: ${{ github.token }}
+      #  run: |
+      #    LATEST_TAG=$(gh release view --json tagName --jq .tagName)
+      #    echo "LATEST_TAG: ${LATEST_TAG}"
+      #    TAG_TIME=$(git log -1 --format=%ct "${LATEST_TAG}")
+      #    echo "TAG_TIME: ${TAG_TIME}"
+      #    PREV_SHA=$(git rev-list -1 --before="${TAG_TIME}" --first-parent origin/master)
+      #    echo "PREV_SHA: ${PREV_SHA}"
+      #    echo "sha=${PREV_SHA}" >> "${GITHUB_OUTPUT}"
+
       - name: "Get Previous Tag"
-        id: prev-tag
-        env:
-          GH_TOKEN: ${{ github.token }}
+        id: tag
         run: |
-          LATEST_TAG=$(gh release view --json tagName --jq .tagName)
-          echo "LATEST_TAG: ${LATEST_TAG}"
-          TAG_TIME=$(git log -1 --format=%ct "${LATEST_TAG}")
-          echo "TAG_TIME: ${TAG_TIME}"
-          PREV_SHA=$(git rev-list -1 --before="${TAG_TIME}" --first-parent origin/master)
-          echo "PREV_SHA: ${PREV_SHA}"
-          echo "sha=${PREV_SHA}" >> "${GITHUB_OUTPUT}"
+          TAG=$(git describe --tags --abbrev=0 2>/dev/null || echo "")
+          echo "TAG: ${TAG}"
+          echo "name=${TAG}" >> "${GITHUB_OUTPUT}"
 
       - name: "Draft Release Action"
         id: draft
-        uses: cssnr/draft-release-action@updates # TODO: Testing Updates
+        uses: cssnr/draft-release-action@master
         with:
           semver: patch
           prerelease: false
           prefix: v
-          previous_tag_name: ${{ steps.prev-tag.outputs.sha }}
+          previous_tag_name: ${{ steps.tag.outputs.name }}
+          notes_strip_prefix: true
 
       - name: "Process Release Draft URL"
         run: |
